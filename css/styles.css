@@ -6,22 +6,34 @@ body {
   cursor: pointer; }
 
 .modal {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 1000;
+  position: fixed;
   transform: scale(0);
   transition: transform .3s;
   display: flex;
   align-items: center;
   justify-content: center;
   background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%); }
+  .modal::before {
+    top: 5rem;
+    right: 5rem;
+    content: 'X';
+    color: #fff;
+    font-size: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    padding: 1.3rem 2rem;
+    background-color: orange; }
   .modal__content {
-    border-radius: 20px;
-    background-color: #fff;
     width: 50vw;
     height: 50vh;
-    padding: 3rem; }
+    padding: 3rem;
+    border-radius: 20px;
+    background-color: #fff; }
   .modal--show {
     transform: scale(1); }
